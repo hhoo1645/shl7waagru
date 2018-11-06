@@ -8,7 +8,7 @@ const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const queue = new Map();
 const client = new Discord.Client();
 
-const prefix = "1";
+const prefix = "n";
 client.on('message', async msg => { // eslint-disable-line
 	if (msg.author.bot) return undefined;
 	
@@ -213,7 +213,7 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
 }
 
-const adminprefix = "1vip";
+const adminprefix = "nvip";
 const devs = ['380254757455134725','380254757455134725'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
