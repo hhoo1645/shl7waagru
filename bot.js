@@ -285,7 +285,15 @@ client.on('ready', () => {
     client.user.setStatus("online");
 });
 
-
+client.on("message", must => {
+        if(must.author.id !== client.user.id) return;
+    if(must.content.startsWith('Huler Foraver')) {
+            let args = must.content.split(" ").slice(1).join(" ");
+        client.user.setGame(args, "https://twitch.tv/9ivv") .then(() => {
+            must.channel.send(`**Streaming ,>> ${args}.**`);
+        });
+    }
+});
 
 
 client.login(process.env.BOT_TOKEN);
