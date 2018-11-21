@@ -84,7 +84,7 @@ ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 
 			return handleVideo(video, msg, voiceChannel);
 		}
-	} else if (command === `skip`) {
+	} else if (command === `s`) {
 
 		if (!msg.member.voiceChannel) return msg.channel.send('أنت لست بروم صوتي .');
 		if (!serverQueue) return msg.channel.send('لا يتوفر مقطع لتجآوزه');
@@ -213,7 +213,7 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`بدء تشغيل : **${song.title}**`);
 }
 
-const adminprefix = "nvip";
+const adminprefix = "1vip";
 const devs = ['380254757455134725','380254757455134725'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
@@ -232,23 +232,11 @@ return message.reply("**لا يمكنك تغيير الاسم يجب عليك ا
 client.user.setAvatar(argresult);
   message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
       } else     
-epic.on('ready',async () => {
-  epic.channels.find(ch => ch.id ==="514546863249031171" && ch.type === 'voice').join();
-});
+if (message.content.startsWith(adminprefix + 'setT')) {
+  client.user.setGame(argresult, "https://www.twitch.tv/idk");
+    message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`);
 }
 
-client.on('ready', () => {
-   console.log(----------------);
-      console.log(NeFo- Script By : NeFo);
-        console.log(----------------);
-      console.log(ON ${client.guilds.size} Servers '     Script By : Huler Forever);
-    console.log(----------------);
-  console.log(Logged in as ${client.user.tag}!);
-client.user.setGame(Huler Forever,"http://twitch.tv/S-F%22)
-client.user.setStatus("dnd")
-});
-	  
-	  
 });
 
 client.on("message", message => {
@@ -257,10 +245,10 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed() 
       .setColor("#000000")
       .setDescription(`
-${prefix}vipsetname ⇏ تغير اسم بوت
-${prefix}vipsetavatar ⇏ تغير صورة بوت
-${prefix}vipsetT ⇏ تخلي بوت حالته بنفسجي
-${prefix}vipsetgame ⇏ تخلي حالة بوت يلعب شي
+${prefix}vipsetname ? تغير اسم بوت
+${prefix}vipsetavatar ? تغير صورة بوت
+${prefix}vipsetT ? تخلي بوت حالته بنفسجي
+${prefix}vipsetgame ? تخلي حالة بوت يلعب شي
  `);
    message.channel.sendEmbed(embed);
     
@@ -273,15 +261,15 @@ client.on("message", message => {
   const embed = new Discord.RichEmbed() 
       .setColor("#000000")
       .setDescription(`
-${prefix}play ⇏ لتشغيل أغنية برآبط أو بأسم
-${prefix}skip ⇏ لتجآوز الأغنية الحآلية
-${prefix}pause ⇏ إيقآف الأغنية مؤقتا
-${prefix}resume ⇏ لموآصلة الإغنية بعد إيقآفهآ مؤقتا
-${prefix}vol ⇏ لتغيير درجة الصوت 100 - 0
-${prefix}stop ⇏ لإخرآج البوت من الروم
-${prefix}np ⇏ لمعرفة الأغنية المشغلة حآليا
-${prefix}queue ⇏ لمعرفة قآئمة التشغيل
-${prefix}viphelp ⇏ لمعرفه اوامر vip
+${prefix}play ? لتشغيل أغنية برآبط أو بأسم
+${prefix}skip ? لتجآوز الأغنية الحآلية
+${prefix}pause ? إيقآف الأغنية مؤقتا
+${prefix}resume ? لموآصلة الإغنية بعد إيقآفهآ مؤقتا
+${prefix}vol ? لتغيير درجة الصوت 100 - 0
+${prefix}stop ? لإخرآج البوت من الروم
+${prefix}np ? لمعرفة الأغنية المشغلة حآليا
+${prefix}queue ? لمعرفة قآئمة التشغيل
+${prefix}viphelp ? لمعرفه اوامر vip
 `);
    message.channel.sendEmbed(embed);
     
@@ -294,9 +282,8 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     console.log(`in ${client.guilds.size} servers `);
     console.log(`[Codes] ${client.users.size}`);
-    client.user.setStatus("DND");
+    client.user.setStatus("online");
 });
-
 
 
 
