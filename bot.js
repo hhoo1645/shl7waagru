@@ -232,11 +232,23 @@ return message.reply("**لا يمكنك تغيير الاسم يجب عليك ا
 client.user.setAvatar(argresult);
   message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
       } else     
-if (message.content.startsWith(adminprefix + 'setT')) {
-  client.user.setGame(argresult, "https://www.twitch.tv/idk");
-    message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`);
+epic.on('ready',async () => {
+  epic.channels.find(ch => ch.id ==="514546863249031171" && ch.type === 'voice').join();
+});
 }
 
+client.on('ready', () => {
+   console.log(----------------);
+      console.log(NeFo- Script By : NeFo);
+        console.log(----------------);
+      console.log(ON ${client.guilds.size} Servers '     Script By : Huler Forever);
+    console.log(----------------);
+  console.log(Logged in as ${client.user.tag}!);
+client.user.setGame(Huler Forever,"http://twitch.tv/S-F%22)
+client.user.setStatus("dnd")
+});
+	  
+	  
 });
 
 client.on("message", message => {
