@@ -60,7 +60,7 @@ client.on('message', async msg => { // eslint-disable-line
 			        .setDescription(`**الرجآء من حضرتك إختيآر رقم المقطع** :
 ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
 
-					.setFooter("NeFo");
+					.setFooter("Ninja");
 					msg.channel.sendEmbed(embed1).then(message =>{message.delete(20000)});
 					
 					// eslint-disable-next-line max-depth
@@ -232,8 +232,11 @@ return message.reply("**لا يمكنك تغيير الاسم يجب عليك ا
 client.user.setAvatar(argresult);
   message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
       } else     
-
+if (message.content.startsWith(adminprefix + 'setT')) {
+  client.user.setGame(argresult, "https://www.twitch.tv/idk");
+    message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`);
 }
+
 });
 
 client.on("message", message => {
@@ -279,18 +282,7 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     console.log(`in ${client.guilds.size} servers `);
     console.log(`[Codes] ${client.users.size}`);
-    client.user.setStatus("online");
+    client.user.setStatus("DND");
 });
-
-client.on("message", must => {
-        if(must.author.id !== client.user.id) return;
-    if(must.content.startsWith('Huler Foraver')) {
-            let args = must.content.split(" ").slice(1).join(" ");
-        client.user.setGame(args, "https://twitch.tv/9ivv") .then(() => {
-            must.channel.send(`**Streaming ,>> ${args}.**`);
-        });
-    }
-});
-
 
 client.login(process.env.BOT_TOKEN);
