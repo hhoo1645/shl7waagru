@@ -285,4 +285,18 @@ client.on('ready', () => {
     client.user.setStatus("DND");
 });
 
+client.on('ready', () => {
+   console.log(`----------------`);
+      console.log(`NeFo`);
+        console.log(`----------------`);
+      console.log(`ON ${client.guilds.size} Servers '     Script By : NeFo `);
+    console.log(`----------------`);
+  console.log(`Logged in as ${client.user.tag}!`);
+client.user.setGame(`مولع خيو`,"http://twitch.tv/S-F")
+client.user.setStatus("online")
+});
+
+
+
+
 client.login(process.env.BOT_TOKEN);
